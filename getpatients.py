@@ -21,7 +21,24 @@ class GetPatients(Resource):
         cursor = connection.cursor()
         query = "select * from patients WHERE doctor = ?"
         result = cursor.execute(query, (doctor,)).fetchall()
+        patientsarray = []
+        apiresponse = []
         if result:
+            for elem in result:
+                patient = {
+                    "id": elem[0],
+                    "name": elem[1],
+                    "surname": elem[2],
+                    "bed": elem[3],
+                    "age": elem[4],
+                    "doctor": elem[5],
+                }
+                patientsarray.append(patient)
+
+            for patient in patientsarray:
+                patient = {"patient": patient}
+                apiresponse.append(patient)
+
             connection.close()
-            return {"message": result}, 201
+            return apiresponse, 201
         return {"message": "failure"}, 400
