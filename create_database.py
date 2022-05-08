@@ -50,8 +50,8 @@ def create_patient(conn, patient):
     :param patient:
     :return:
     """
-    sql = ''' INSERT INTO patients(id,name,surname,bed,age,doctor)
-              VALUES(?,?,?,?,?,?) '''
+    sql = ''' INSERT INTO patients(id,name,surname,bed,age,doctor,image)
+              VALUES(?,?,?,?,?,?,?) '''
     cur = conn.cursor()
     cur.execute(sql, patient)
     conn.commit()
@@ -66,7 +66,8 @@ def main():
                                      surname text NOT NULL,
                                      bed integer,
                                      age integer,
-                                     doctor integer NOT NULL
+                                     doctor integer NOT NULL,
+                                     image text NOT NULL
                                  );"""
 
     conn = create_connection(database)
@@ -74,13 +75,20 @@ def main():
         create_table(conn, sql_create_patients_table)
 
         with conn:
-            patient1 = (1, 'adam', 'h', 1, 1997, 1)
-            patient2 = (2, 'zuza', 'd', 2, 1998, 2)
-            patient3 = (3, 'arnold', 's', 3, 1945, 3)
-            patient4 = (4, 'dave', 'g', 4, 1962, 4)
-            patient5 = (5, 'martin', 'g', 4, 1962, 4)
-            patient6 = (6, 'andy', 'f', 4, 1962, 4)
-            patient7 = (7, 'alan', 'w', 4, 1962, 4)
+            patient1 = (1, 'adam', 'h', 1, 1997, 1,
+                        "https://images.unsplash.com/photo-1611915387288-fd8d2f5f928b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80")
+            patient2 = (2, 'zuza', 'd', 2, 1998, 2,
+                        "https://images.unsplash.com/photo-1611915387288-fd8d2f5f928b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80")
+            patient3 = (3, 'arnold', 's', 3, 1945, 3,
+                        "https://images.unsplash.com/photo-1611915387288-fd8d2f5f928b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80")
+            patient4 = (4, 'dave', 'g', 4, 1962, 4,
+                        "https://cdn.koncertomania.pl/file/eventmediabackup/15/1/1420337343AKHqyYqhs7qQOrGZc5QYEa6Kq87aBW.jpg")
+            patient5 = (5, 'martin', 'g', 4, 1962, 4,
+                        "https://www.magneticmag.com/.image/t_share/MTYzNTc3ODgyMDM4MjQ4ODc1/62182da3-149b-4ba7-9e02-5b6b084a6da2.jpg")
+            patient6 = (6, 'andy', 'f', 4, 1962, 4,
+                        "https://ocdn.eu/pulscms-transforms/1/FAqk9kuTURBXy9iZGNmNDU4YS0zNzZjLTRlZjMtODhjMi02ZWRkMDMwYmNkYWYuanBlZ5GVAs0DBwDDw4GhMAE")
+            patient7 = (7, 'alan', 'w', 4, 1962, 4,
+                        "https://dt7v1i9vyp3mf.cloudfront.net/styles/news_large/s3/imagelibrary/1/1998-01-alanwilder-1-0KYaRQRLv7qOw6hgaxM0cQzgmlQcGXFS.jpg")
 
             create_patient(conn, patient1)
             create_patient(conn, patient2)

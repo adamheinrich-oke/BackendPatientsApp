@@ -19,11 +19,11 @@ class InsertPatients(Resource):
         else:
             data = request.get_json(force=True)
             data = {'id': _id, 'name': data['name'], 'surname': data['surname'], 'bed': data['bed'],
-                    'age': data['age'], 'doctor': data['doctor']}
-            query = "INSERT INTO patients VALUES(?,?,?,?,?,?)"
+                    'age': data['age'], 'doctor': data['doctor'], 'image': data['image']}
+            query = "INSERT INTO patients VALUES(?,?,?,?,?,?,?)"
             result = cursor.execute(query,
                                     (data['id'], data['name'], data['surname'], data['bed'], data['age'],
-                                     data['doctor']))
+                                     data['doctor'], data['image']))
             connection.commit()
             connection.close()
             if result:

@@ -32,6 +32,7 @@ class GetPatients(Resource):
                     "bed": elem[3],
                     "age": elem[4],
                     "doctor": elem[5],
+                    "image": elem[6]
                 }
                 patientsarray.append(patient)
 
