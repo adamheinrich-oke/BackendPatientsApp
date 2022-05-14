@@ -81,13 +81,13 @@ def main():
                         "https://images.unsplash.com/photo-1611915387288-fd8d2f5f928b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80")
             patient3 = (3, 'arnold', 's', 3, 1945, 3,
                         "https://images.unsplash.com/photo-1611915387288-fd8d2f5f928b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80")
-            patient4 = (4, 'dave', 'g', 4, 1962, 4,
+            patient4 = (4, 'Dave', 'Gahan', 9, 1962, 4,
                         "https://cdn.koncertomania.pl/file/eventmediabackup/15/1/1420337343AKHqyYqhs7qQOrGZc5QYEa6Kq87aBW.jpg")
-            patient5 = (5, 'martin', 'g', 4, 1962, 4,
+            patient5 = (5, 'Martin', 'Gore', 10, 1961, 4,
                         "https://www.magneticmag.com/.image/t_share/MTYzNTc3ODgyMDM4MjQ4ODc1/62182da3-149b-4ba7-9e02-5b6b084a6da2.jpg")
-            patient6 = (6, 'andy', 'f', 4, 1962, 4,
+            patient6 = (6, 'Andy', 'Fletcher', 11, 1961, 4,
                         "https://ocdn.eu/pulscms-transforms/1/FAqk9kuTURBXy9iZGNmNDU4YS0zNzZjLTRlZjMtODhjMi02ZWRkMDMwYmNkYWYuanBlZ5GVAs0DBwDDw4GhMAE")
-            patient7 = (7, 'alan', 'w', 4, 1962, 4,
+            patient7 = (7, 'Alan', 'Wilder', 12, 1959, 4,
                         "https://dt7v1i9vyp3mf.cloudfront.net/styles/news_large/s3/imagelibrary/1/1998-01-alanwilder-1-0KYaRQRLv7qOw6hgaxM0cQzgmlQcGXFS.jpg")
 
             create_patient(conn, patient1)

@@ -18,7 +18,7 @@ class InsertPatients(Resource):
             return {'message': 'Such patient already exists in DB'}, 201
         else:
             data = request.get_json(force=True)
-            data = {'id': _id, 'name': data['name'], 'surname': data['surname'], 'bed': data['bed'],
+            data = {'id': data['id'], 'name': data['name'], 'surname': data['surname'], 'bed': data['bed'],
                     'age': data['age'], 'doctor': data['doctor'], 'image': data['image']}
             query = "INSERT INTO patients VALUES(?,?,?,?,?,?,?)"
             result = cursor.execute(query,
